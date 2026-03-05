@@ -14,7 +14,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black tracking-tight">
               Pooble Pizza
             </h1>
-            <button className="bg-btnOrange hover:bg-btnHover text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors shadow-sm">
+            <button className="bg-blue-400 hover:bg-btnHover text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors shadow-sm">
               Order Now
             </button>
           </div>
