@@ -1,9 +1,13 @@
 import './App.css';
 import Header from './components/header';
-import Hero from './components/hero';
-import Categories from './components/categories';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+
+import Footer from './components/footer';
+
+
+import Home from './components/home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 // Import category components
 import Pizza from './components/componentsexplore/Pizza';
 import Biryani from './components/componentsexplore/biryani';
@@ -12,25 +16,24 @@ import PureVeg from './components/componentsexplore/pureVeg';
 import Paratha from './components/componentsexplore/paratha';
 import Chinese from './components/componentsexplore/chinese';
 
-
 function App() {
   return (
     <Router>
       <div className="App">
+  
         <Header />
-        <Hero />
-        <Categories />
 
-        {/* Routes for different categories */}
         <Routes>
-          <Route exact path="/" component={Categories} />
+          <Route path="/" element={<Home />} />
           <Route path="/category/pizza" element={<Pizza />} />
-          <Route path="/category/biryani" component={Biryani} />
-          <Route path="/category/shake" component={Shake} />
-          <Route path="/category/pureveg" component={PureVeg} />
-          <Route path="/category/paratha" component={Paratha} />
-          <Route path="/category/chinese" component={Chinese} />
+          <Route path="/category/biryani" element={<Biryani />} />
+          <Route path="/category/shake" element={<Shake />} />
+          <Route path="/category/pureveg" element={<PureVeg />} />
+          <Route path="/category/paratha" element={<Paratha />} />
+          <Route path="/category/chinese" element={<Chinese />} />
         </Routes>
+           
+             <Footer />
       </div>
     </Router>
   );
