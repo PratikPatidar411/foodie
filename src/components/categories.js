@@ -19,12 +19,12 @@ function Categories() {
   ];
 
   return (
-    <div className="w-full h-[400px] bg-none px-[100px] py-[100px]">
-      <div>
-        <h1 className="mb-12 font-bold text-2xl">What Are You Hungry For Today?</h1>
+    <div className="w-full px-6 sm:px-8 lg:px-16 py-12 bg-none">
+      <div className="text-center mb-12">
+        <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl">What Are You Hungry For Today?</h1>
       </div>
 
-      <div className="overflow-x-auto flex flex-row gap-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-12 overflow-x-auto">
         {categoryItems.map((item, index) => (
           <Link key={index} to={`/category/${item.name.toLowerCase()}`}>
             <Cardcategories name={item.name} imgurl={item.imgurl} alt={"failed to load"} />

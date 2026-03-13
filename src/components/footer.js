@@ -3,19 +3,11 @@ import Paypal from './images/Paypal.png';
 import Visa from './images/visa.png';
 import Mastercard from './images/mastercard.png';
 
-
-
-
 function Footer() {
-
-
-  // Handle newsletter subscription
-  
-
   return (
     <footer className="bg-gray-800 text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12">
 
           {/* Company Info Section */}
           <div className="space-y-6">
@@ -59,26 +51,24 @@ function Footer() {
             </div>
           </div>
 
-          {/* Newsletter Subscription Section */}
-         
-
           {/* Location and Payment Methods Section */}
           <div className="space-y-6">
             <h3 className="text-xl font-bold">Our Location</h3>
             <p>123 Foodie Street, City Name, Country</p>
             <div>
               <h4 className="font-bold">We Accept</h4>
-              <div className="flex space-x-4 w-6 h-6f">
-                <img src={Visa} alt="Visa" />
-                <img src={Mastercard} alt="MasterCard" />
-                <img src={Paypal} alt="Paypal" />
+              <div className="flex space-x-4">
+                <img src={Visa} alt="Visa" className="h-6" />
+                <img src={Mastercard} alt="MasterCard" className="h-6" />
+                <img src={Paypal} alt="Paypal" className="h-6" />
               </div>
             </div>
           </div>
-          
- <div className="space-y-6">
+
+          {/* Available in Locations Section */}
+          <div className="space-y-6">
             <h3 className="text-xl font-bold">Available in:</h3>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-6">
               <div>
                 <p>Indore</p>
                 <p>Bhopal</p>
@@ -95,7 +85,6 @@ function Footer() {
               </div>
             </div>
           </div>
-
 
         </div>
       </div>

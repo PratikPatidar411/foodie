@@ -1,13 +1,10 @@
 import './App.css';
 import Header from './components/header';
-
-
 import Footer from './components/footer';
-
-
 import Home from './components/home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 // Import category components
 import Pizza from './components/componentsexplore/Pizza';
 import Biryani from './components/componentsexplore/biryani';
@@ -19,21 +16,26 @@ import Chinese from './components/componentsexplore/chinese';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="flex flex-col min-h-screen">
   
+        {/* Responsive Header */}
         <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/category/pizza" element={<Pizza />} />
-          <Route path="/category/biryani" element={<Biryani />} />
-          <Route path="/category/shake" element={<Shake />} />
-          <Route path="/category/pureveg" element={<PureVeg />} />
-          <Route path="/category/paratha" element={<Paratha />} />
-          <Route path="/category/chinese" element={<Chinese />} />
-        </Routes>
-           
-             <Footer />
+        {/* Main Content */}
+        <div className="flex-grow container mx-auto px-6 sm:px-8 lg:px-16">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/category/pizza" element={<Pizza />} />
+            <Route path="/category/biryani" element={<Biryani />} />
+            <Route path="/category/shake" element={<Shake />} />
+            <Route path="/category/pureveg" element={<PureVeg />} />
+            <Route path="/category/paratha" element={<Paratha />} />
+            <Route path="/category/chinese" element={<Chinese />} />
+          </Routes>
+        </div>
+
+        {/* Responsive Footer */}
+        <Footer />
       </div>
     </Router>
   );

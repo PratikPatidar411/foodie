@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [redirect, setredirct] = useState(0);
   const navigate = useNavigate('');
 
   // Array of items including both name (for the heading) and image source
