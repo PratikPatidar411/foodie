@@ -1,59 +1,91 @@
 import React, { useState } from 'react';
-import { IoCartOutline } from "react-icons/io5";
+import { IoCartOutline, IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 import Logo from './images/Logo.png';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for routing
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Handle Enter key press in search input
   const handleSearch = (e) => {
     if (e.key === 'Enter') {
-      // If the search query is "pizza", redirect to the pizza section
-      if (searchQuery.toLowerCase() === 'pizza') {
-        navigate('./Category/pizza'); // Redirect to pizza section
-      }
-      if (searchQuery.toLowerCase() === 'biryani')
-      {
-        navigate('./Category/biryani');
-      }
-           if (searchQuery.toLowerCase() === 'shake' || 'milkshake')
-      {
-        navigate('./Category/Shake');
-      }
-      // You can add more conditions here for other searches if needed
+      const query = searchQuery.toLowerCase();
+      if (query === 'pizza') navigate('/category/pizza');
+      else if (query === 'biryani') navigate('/category/biryani');
+      else if (query === 'shake' || query === 'milkshake') navigate('/category/shake');
+      
+      setIsMenuOpen(false); 
     }
   };
 
   return (
-    <header className="sticky top-0 z-10 bg-[#F29F67] fixed w-full z-50 bg-bg-main/90 backdrop-blur-sm border-b border-white/5">
+    <header className="sticky top-0 z-50 w-full bg-[#F29F67] py-3 shadow-md">
       <div className="w-[90%] max-w-[1200px] mx-auto">
-        <nav className="flex justify-end items-center">
-          <Link to="/">
-            <img src={Logo} alt="logo" className="h-20 w-20 mr-12" />
+        
+     
+        <div className="flex justify-between items-center">
+          
+     
+          <Link to="/" className="flex-shrink-0">
+            <img src={Logo} alt="Bhojan logo" className="h-12 w-12 md:h-16 md:w-16 object-contain" />
           </Link>
-          
-          <input
-            type="text"
-            className="h-[35px] w-[550px] rounded-full mr-[300px] text-[14px] pl-[20px]"
-            placeholder="Search for food or restaurants"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)} // Update the search query as the user types
-            onKeyDown={handleSearch} // Call handleSearch when the user presses a key
-          />
-          
-          <ul className="flex gap-8 items-center">
-            <li><a href="/" className="text-text-primary hover:text-accent font-medium transition-colors duration-300">Home</a></li>
-            <li><a href="#menu" className="text-text-primary hover:text-accent font-medium transition-colors duration-300">Menu</a></li>
-            <li><a href="#profile" className="text-text-primary hover:text-accent font-medium transition-colors duration-300">Profile</a></li>
+
+          <div className="hidden md:block flex-1 max-w-[600px] mx-8">
+            <input
+              type="text"
+              className="w-full h-[40px] rounded-full text-[14px] px-6 outline-none focus:ring-2 focus:ring-orange-900 shadow-sm"
+              placeholder="Search for food or restaurants..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={handleSearch}
+            />
+          </div>
+
+          <ul className="hidden md:flex gap-8 items-center">
+            <li><Link to="/" className="text-gray-900 hover:text-white font-semibold transition-colors">Home</Link></li>
+            <li><a href="#menu" className="text-gray-900 hover:text-white font-semibold transition-colors">Menu</a></li>
+            <li><a href="#profile" className="text-gray-900 hover:text-white font-semibold transition-colors">Profile</a></li>
             <li>
-              <a href="#cart" className="flex items-center text-2xl text-accent hover:text-accent-hover transition-colors duration-300">
+              <a href="#cart" className="flex items-center text-3xl text-gray-900 hover:text-white transition-colors">
                 <IoCartOutline />
               </a>
             </li>
           </ul>
-        </nav>
+
+          <div className="flex md:hidden items-center gap-4">
+            <a href="#cart" className="text-3xl text-gray-900">
+              <IoCartOutline />
+            </a>
+            <button 
+              className="text-3xl text-gray-900"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <IoCloseOutline /> : <IoMenuOutline />}
+            </button>
+          </div>
+
+        </div>
+
+        <div className="mt-3 md:hidden w-full">
+          <input
+            type="text"
+            className="w-full h-[40px] rounded-full text-[14px] px-6 outline-none focus:ring-2 focus:ring-orange-900 shadow-sm"
+            placeholder="Search for food..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={handleSearch}
+          />
+        </div>
+
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-60 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+          <ul className="flex flex-col gap-4 pb-2 text-center bg-white/20 rounded-lg p-4 pr-12">
+            <li><Link to="/" onClick={() => setIsMenuOpen(false)} className="block text-gray-900 hover:text-white font-semibold">Home</Link></li>
+            <li><a href="#menu" onClick={() => setIsMenuOpen(false)} className="block text-gray-900 hover:text-white font-semibold">Menu</a></li>
+            <li><a href="#profile" onClick={() => setIsMenuOpen(false)} className="block text-gray-900 hover:text-white font-semibold">Profile</a></li>
+          </ul>
+        </div>
+
       </div>
     </header>
   );

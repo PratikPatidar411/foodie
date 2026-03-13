@@ -17,14 +17,14 @@ import Malabar from '../images/Malabarbir.png';
 function Biryani() {
   // Base Functionality of Pizza component
   return (
-    <div  className="h-[400px] flex-wrap flex gap-12 pl-28 pb-24">
+    <div  className="h-auto flex-wrap flex gap-12 sm:pl-28 pb-24">
 
-<div className="w-full h-[30px] bg-white">
+<div className="w-full h-[30px] bg-white mb-12">
   <p className="pt-8  font-bold text-[20px] text-gray-900">Craving biryani? We have something special!</p>
 </div>
 
       <Card imgurl={Pulav} name="Pulao" rs="100" p="veg" />
-      <Card imgurl={Lucknavi} name="Lucknavi biryani" rs="134" p="Non=veg" />
+      <Card imgurl={Lucknavi} name="Lucknavi biryani" rs="134" p="Non-veg" />
       <Card imgurl={Kolkata} name="Kolkata biryani" rs="153" p="Non-veg" />
       <Card imgurl={Malabar} name="Malabar biryani" rs="356" p="Non-veg" />
 

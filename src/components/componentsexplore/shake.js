@@ -8,15 +8,15 @@ import Coffie from '../images/Coffiemilk.png';
 function Shake() {
   // Base Functionality of Shake component
   return (
-    <div className="w-full px-6 sm:px-8 lg:px-16 py-12">
+    <div className="w-full  sm:px-8 lg:px-16">
       
-      <div className="w-full h-[30px] bg-white mb-12">
-        <p className="pt-8 font-bold text-[20px] text-gray-900 text-center">
+      <div className="w-full h-[30px] bg-white sm:mb-12">
+        <p className="font-bold text-[20px] sm:text-[25px] text-gray-800 text-start">
           Shake it up with our creamy delights!
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+      <div className="flex flex-wrap gap-12">
         <Card imgurl={Chocolate} name="Chocolate Shake" rs="100" p="veg" />
         <Card imgurl={Strawberry} name="Strawberry Milkshake" rs="134" p="veg" />
         <Card imgurl={Venilla} name="Vanilla Bean Milkshake" rs="153" p="veg" />

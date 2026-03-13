@@ -2,6 +2,8 @@ import './App.css';
 import Header from './components/header';
 import Footer from './components/footer';
 import Home from './components/home';
+import Login from './components/Login';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -16,25 +18,32 @@ import Chinese from './components/componentsexplore/chinese';
 function App() {
   return (
     <Router>
+      {/* Make sure the whole page is wrapped in flexbox for full height */}
       <div className="flex flex-col min-h-screen">
-  
-        {/* Responsive Header */}
+        
+        {/* Header */}
         <Header />
-
-        {/* Main Content */}
-        <div className="flex-grow container mx-auto px-6 sm:px-8 lg:px-16">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/category/pizza" element={<Pizza />} />
-            <Route path="/category/biryani" element={<Biryani />} />
-            <Route path="/category/shake" element={<Shake />} />
-            <Route path="/category/pureveg" element={<PureVeg />} />
-            <Route path="/category/paratha" element={<Paratha />} />
-            <Route path="/category/chinese" element={<Chinese />} />
-          </Routes>
+        
+        {/* Main content */}
+        <div className="flex-grow">
+          <div className="container mx-auto pl-28 md:pl-4 py-12">
+            <Routes>
+              {/* Public routes */}
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              
+              {/* Category routes */}
+              <Route path="/category/pizza" element={<Pizza />} />
+              <Route path="/category/biryani" element={<Biryani />} />
+              <Route path="/category/shake" element={<Shake />} />
+              <Route path="/category/pureveg" element={<PureVeg />} />
+              <Route path="/category/paratha" element={<Paratha />} />
+              <Route path="/category/chinese" element={<Chinese />} />
+            </Routes>
+          </div>
         </div>
 
-        {/* Responsive Footer */}
+        {/* Footer */}
         <Footer />
       </div>
     </Router>

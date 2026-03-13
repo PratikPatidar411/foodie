@@ -19,7 +19,7 @@ function Categories() {
   ];
 
   return (
-    <div className="w-full px-6 sm:px-8 lg:px-16 py-12 bg-none">
+    <div className="w-full px-6 sm:px-8  py-12 bg-none">
       <div className="text-center mb-12">
         <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl">What Are You Hungry For Today?</h1>
       </div>

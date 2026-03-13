@@ -5,25 +5,26 @@ import Mastercard from './images/mastercard.png';
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-16">
+    // Yahan se 'min-h-screen' hata diya gaya hai aur 'mt-auto' aur 'w-full' add kiya hai
+    <footer className="bg-gray-800 text-white py-8 sm:py-16 w-full mt-auto">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-12">
 
           {/* Company Info Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold">Bhojan</h3>
+            <h3 className="text-xl font-bold sm:text-2xl">Bhojan</h3>
             <p>Your favorite food delivery service, delivering the best food to your doorstep.</p>
             <p className="text-sm">&copy; 2026 Bhojan. All rights reserved.</p>
             <div>
               <h4 className="font-bold">Contact Us</h4>
-              <p className="text-sm">Phone: +1 234 567 890</p>
+              <p className="text-sm">Phone: 8547588524</p>
               <p className="text-sm">Email: support@bhojan.com</p>
             </div>
           </div>
 
           {/* Quick Links Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold">Quick Links</h3>
+            <h3 className="text-xl font-bold sm:text-2xl">Quick Links</h3>
             <ul className="space-y-4">
               <li><a href="/about" className="hover:text-red-500">About Us</a></li>
               <li><a href="/contact" className="hover:text-red-500">Contact</a></li>
@@ -34,8 +35,8 @@ function Footer() {
 
           {/* Social Media Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold">Social Links</h3>
-            <div className="flex space-x-6">
+            <h3 className="text-xl font-bold sm:text-2xl">Social Links</h3>
+            <div className="flex space-x-6 flex-wrap">
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
                 <i className="fab fa-facebook-f text-xl"></i>
               </a>
@@ -53,7 +54,7 @@ function Footer() {
 
           {/* Location and Payment Methods Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold">Our Location</h3>
+            <h3 className="text-xl font-bold sm:text-2xl">Our Location</h3>
             <p>123 Foodie Street, City Name, Country</p>
             <div>
               <h4 className="font-bold">We Accept</h4>
@@ -67,7 +68,7 @@ function Footer() {
 
           {/* Available in Locations Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold">Available in:</h3>
+            <h3 className="text-xl font-bold sm:text-2xl">Available in:</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-6">
               <div>
                 <p>Indore</p>

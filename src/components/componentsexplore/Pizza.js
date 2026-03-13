@@ -17,10 +17,10 @@ import Classic from '../images/Classic.png';
 function Pizza() {
   // Base Functionality of Pizza component
   return (
-    <div  className="h-[800px] flex-wrap flex gap-12 pl-28 pb-24">
+    <div  className="h-auto flex-wrap flex gap-12 pl-0 md:pl-28 pb-24">
 
-<div className="w-full h-[30px] bg-white">
-  <p className="pt-8  font-bold text-[20px] text-gray-900">Craving Pizza? We’ve Got Your Slice of Happiness!</p>
+<div className="w-full h-[30px] bg-white mb-8">
+  <p className="pt-8  font-bold text-[20px] text-gray-900 ">Craving Pizza? We’ve Got Your Slice of Happiness!</p>
 </div>
 
       <Card imgurl={Margherita} name="Margherita Pizza" rs="100" p="veg" />
