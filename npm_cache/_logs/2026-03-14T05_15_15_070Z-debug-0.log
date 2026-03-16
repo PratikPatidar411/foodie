@@ -7,6 +7,7 @@
 6 silly config load:file:C:\Users\MY FUTURE\AppData\Roaming\npm\etc\npmrc
 7 verbose title npm start
 8 verbose argv "start"
-9 verbose logfile logs-max:10 dir:C:\Users\MY FUTURE\foodie\npm_cache\_logs\2026-03-08T04_05_54_783Z-
-10 verbose logfile C:\Users\MY FUTURE\foodie\npm_cache\_logs\2026-03-08T04_05_54_783Z-debug-0.log
-11 silly logfile done cleaning log files
+9 verbose logfile logs-max:10 dir:C:\Users\MY FUTURE\foodie\npm_cache\_logs\2026-03-14T05_15_15_070Z-
+10 verbose logfile C:\Users\MY FUTURE\foodie\npm_cache\_logs\2026-03-14T05_15_15_070Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files

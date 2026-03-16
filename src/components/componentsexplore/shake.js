@@ -5,7 +5,7 @@ import Strawberry from '../images/Strawberry.png';
 import Venilla from '../images/Venilla.png';
 import Coffie from '../images/Coffiemilk.png';
 
-function Shake() {
+function Shake({ addToCart }) {
   // Base Functionality of Shake component
   return (
     <div className="w-full  sm:px-8 lg:px-16">
@@ -17,10 +17,10 @@ function Shake() {
       </div>
 
       <div className="flex flex-wrap gap-12">
-        <Card imgurl={Chocolate} name="Chocolate Shake" rs="100" p="veg" />
-        <Card imgurl={Strawberry} name="Strawberry Milkshake" rs="134" p="veg" />
-        <Card imgurl={Venilla} name="Vanilla Bean Milkshake" rs="153" p="veg" />
-        <Card imgurl={Coffie} name="Caramel Coffee Milkshake" rs="356" p="veg" />
+        <Card imgurl={Chocolate} name="Chocolate Shake" rs="100" p="veg" addToCart={addToCart} />
+        <Card imgurl={Strawberry} name="Strawberry Milkshake" rs="134" p="veg" addToCart={addToCart} />
+        <Card imgurl={Venilla} name="Vanilla Bean Milkshake" rs="153" p="veg" addToCart={addToCart} />
+        <Card imgurl={Coffie} name="Caramel Coffee Milkshake" rs="356" p="veg"  addToCart={addToCart}/>
       </div>
     </div>
   );

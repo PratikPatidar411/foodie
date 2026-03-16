@@ -8,11 +8,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Simulating login validation (no backend)
     if (username === 'Pratik Patidar' && password === '123') {
-      alert('Login Successful!');
-      // Redirect to another page or show content (simulate success)
-      window.location.href = '/'; // Redirect to home page after login
+      
+      window.location.href = '/'; 
     } else {
       setError('Invalid username or password!');
     }
